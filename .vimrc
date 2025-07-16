@@ -26,7 +26,7 @@ nnoremap <S-h> :NERDTreeFocus<CR>
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 nnoremap <S-n> :Files<CR>
-nnoremap <C-g> :Git 
+nnoremap <C-n> :Git 
 
 nnoremap <S-m> :tabnew<CR>
 nnoremap <C-p> :tabn<CR>
