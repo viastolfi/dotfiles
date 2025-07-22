@@ -30,6 +30,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <C-n> :Git 
+nnoremap <leader>h :Ex<CR>
 
 nnoremap <S-m> :tabnew<CR>
 nnoremap <C-p> :tabn<CR>
