@@ -13,6 +13,13 @@ set encoding=UTF-8
 :let mapleader = ","
 
 
+" Netrw
+let g:netrw_banner = 0
+let g:netrw_sort_by = 'name'
+let g:netrw_sort_direction = 'normal'
+let g:netrw_browse_split = 4 
+autocmd FileType netrw autocmd BufLeave <buffer> if &filetype == 'netrw' | :bd | endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugin
 """"""""""""""""""""""""""""""""""""""""""""""""""""
@@ -30,8 +37,9 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 nnoremap <C-n> :Git 
-nnoremap <leader>h :Ex<CR>
+nnoremap <leader>ga :Git add -A <CR>
 
+nnoremap <leader>h :Ex<CR>
 nnoremap <S-m> :tabnew<CR>
 nnoremap <C-p> :tabn<CR>
 nnoremap <C-o> :tabp<CR>
