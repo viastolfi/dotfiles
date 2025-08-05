@@ -29,6 +29,7 @@ call plug#begin()
 Plug 'junegunn/seoul256.vim'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-sensible.git'
+Plug 'junegunn/vader.vim'
 
 call plug#end()
 
@@ -38,6 +39,8 @@ call plug#end()
 
 nnoremap <C-n> :Git 
 nnoremap <leader>ga :Git add -A <CR>
+nnoremap <leader>gc :Git commit -m "
+nnoremap <leader>gp :Git push <CR>
 
 nnoremap <leader>h :Ex<CR>
 nnoremap <S-m> :tabnew<CR>
@@ -48,6 +51,8 @@ nnoremap <leader>c :cclose<CR>
 nnoremap <C-c> :%w !pbcopy<CR>
 
 nnoremap <S-t> :!
+
+nnoremap <S-m> :make <CR>:redraw!<CR>:copen<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme
@@ -69,5 +74,4 @@ function! s:GoSetup()
 
   nnoremap <S-m> :make build .<CR>:redraw!<CR>:copen<CR>
 endfunction
-
 
