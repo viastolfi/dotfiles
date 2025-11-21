@@ -1,0 +1,35 @@
+# $HOME/.config/alacritty/alacritty.toml
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_latte.toml"
+]
+
+[window]
+
+padding.x = 10
+padding.y = 10
+
+decorations = "Full"
+decorations_theme_variant = "Light" # "Dark"
+
+[font]
+
+size = 11.0
+
+[font.bold]
+family = "monospace"
+style = "Bold"
+
+[font.bold_italic]
+family = "monospace"
+style = "Bold Italic"
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.normal]
+family = "monospace"
+style = "Bold"
+
