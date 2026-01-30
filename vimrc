@@ -9,8 +9,13 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set encoding=UTF-8
+set hlsearch
+set colorcolumn=70
 
-:let mapleader = ","
+set path+=include
+set wildignore+=build/**,lib/**
+
+:let mapleader = " "
 
 
 " Netrw
@@ -25,11 +30,10 @@ autocmd FileType netrw autocmd BufLeave <buffer> if &filetype == 'netrw' | :bd |
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin()
- 
-Plug 'junegunn/seoul256.vim'
+
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} 
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-sensible.git'
-Plug 'junegunn/vader.vim'
 
 call plug#end()
 
@@ -43,24 +47,20 @@ nnoremap <leader>gc :Git commit -m "
 nnoremap <leader>gp :Git push <CR>
 
 nnoremap <leader>h :Ex<CR>
-nnoremap <S-m> :tabnew<CR>
-nnoremap <C-p> :tabn<CR>
-nnoremap <C-o> :tabp<CR>
-nnoremap <leader>c :cclose<CR>
+nnoremap <leader>m :tabnew<CR>
+nnoremap <leader>p :tabn<CR>
+nnoremap <leader>o :tabp<CR>
 
-nnoremap <C-c> :%w !pbcopy<CR>
+nnoremap <leader>cc :cclose<CR>
+nnoremap <leader>co :copen<CR>
+
+nnoremap <leader>vg :vimgrep /<c-r>=expand("<cword>")<cr>/gj **/*
+
+nnoremap <C-c> :%w !wl-copy<CR>
 
 nnoremap <S-t> :!
 
 nnoremap <S-m> :make <CR>:redraw!<CR>:copen<CR>
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Theme
-""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:seoul256_background = 256
-colo seoul256-light
-set background=light
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Make setup depending on Filetype
