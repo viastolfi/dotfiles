@@ -13,7 +13,7 @@ set hlsearch
 set colorcolumn=70
 
 set path+=include
-set wildignore+=build/**,lib/**
+set wildignore+=build/**,lib/**,docs/**
 
 :let mapleader = " "
 
@@ -61,6 +61,8 @@ nnoremap <C-c> :%w !wl-copy<CR>
 nnoremap <S-t> :!
 
 nnoremap <S-m> :make <CR>:redraw!<CR>:copen<CR>
+nnoremap <leader>sr <C-w>L :vert res 58<CR>
+nnoremap <leader>sl <C-w>H :vert res 75<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 " Make setup depending on Filetype
